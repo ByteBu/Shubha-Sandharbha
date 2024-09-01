@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Hero Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css"
+    />
+    <style>
+            /* CSS styles */
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+
+            body {
+              font-family: Arial, sans-serif;
+              line-height: 1.6;
+              background-color: #f3f4f6;
+              padding: 1rem;
+            }
+
+            .hero {
+              position: relative;
+              min-height: 100vh;
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              padding: 2rem;
+              transition: background-image 0.3s ease-in-out;
+            }
+
+            .form-container {
+              background-color: rgba(255, 255, 255, 0.95);
+              padding: 2rem;
+              border-radius: 10px;
+              width: 100%;
+              max-width: 400px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Contact Form Styles */
+            :root {
+              --primary: #ff6a3e;
+              --primaryLight: #ffba43;
+              --secondary: #ffba43;
+              --secondaryLight: #ffba43;
+              --headerColor: #1a1a1a;
+              --bodyTextColor: #4e4b66;
+              --bodyTextColorWhite: #fafbfc;
+              --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+              --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+              --bodyFontSize: 1rem;
+              --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+            }
+
+            .cs-topper {
+              font-size: var(--topperFontSize);
+              line-height: 1.2em;
+              text-transform: uppercase;
+              text-align: inherit;
+              letter-spacing: 0.1em;
+              font-weight: 700;
+              color: var(--primary);
+              margin-bottom: 0.25rem;
+              display: block;
+            }
+
+            .cs-title {
+              font-size: var(--headerFontSize);
+              font-weight: 900;
+              line-height: 1.2em;
+              text-align: inherit;
+              max-width: 43.75rem;
+              margin: 0 0 1rem 0;
+              color: var(--headerColor);
+              position: relative;
+            }
+
+            .cs-text {
+              font-size: var(--bodyFontSize);
+              line-height: 1.5em;
+              text-align: inherit;
+              width: 100%;
+              max-width: 40.625rem;
+              margin: 0;
+              color: var(--bodyTextColor);
+            }
+
+            #contact-1388 .cs-title {
+              max-width: 23ch;
+            }
+
+            #contact-1388 .cs-form {
+              width: 100%;
+              max-width: 34rem;
+              padding: clamp(1.5rem, 5.18vw, 2rem) clamp(1rem, 4vw, 3rem);
+              box-sizing: border-box;
+              background-color: #fff;
+              border-radius: 1rem;
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              align-items: center;
+              gap: 0.75rem;
+            }
+
+            #contact-1388 .cs-h3 {
+              font-size: clamp(1.25rem, 3vw, 1.4375rem);
+              line-height: 1.2em;
+              font-weight: 700;
+              margin: 0;
+              color: var(--headerColor);
+            }
+
+            #contact-1388 .cs-label {
+              font-size: clamp(0.875rem, 1.5vw, 1rem);
+              width: 100%;
+              color: var(--headerColor);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+              gap: 0.25rem;
+            }
+
+            #contact-1388 .cs-input {
+              font-size: 1rem;
+              width: 100%;
+              height: 3.5rem;
+              padding: 0;
+              padding-left: 1.5rem;
+              color: var(--headerColor);
+              background-color: #f7f7f7;
+              border-radius: 0.5rem;
+              border: none;
+              box-sizing: border-box;
+            }
+
+            #contact-1388 .cs-input::placeholder {
+              color: #7d799c;
+              opacity: 0.6;
+            }
+
+            #contact-1388 .cs-wedding-type {
+              width: 100%;
+              margin: 0.5rem 0;
+            }
+
+            #contact-1388 .cs-radio-group {
+              display: block;
+              flex-direction: column;
+              gap: 0.5rem;
+            }
+            .cs-radio-group input {
+              margin-right: 2.5px;
+            }
+
+            #contact-1388 .cs-radio-group label {
+              font-size: clamp(0.875rem, 1.5vw, 1rem);
+              display: flex;
+              color: var(--headerColor);
+              margin-top: 0.3rem;
+            }
+
+            #contact-1388 .cs-date {
+              width: 100%;
+              margin: 0rem 0;
+            }
+
+            #contact-1388 .cs-input[type="date"] {
+              font-size: 1rem;
+              width: 100%;
+              height: 3.5rem;
+              padding: 0;
+              padding-left: 1.5rem;
+              color: var(--headerColor);
+              background-color: #f7f7f7;
+              border-radius: 0.5rem;
+              border: none;
+              box-sizing: border-box;
+            }
+
+            #contact-1388 .cs-button-solid {
+              font-size: 1rem;
+              line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+              text-decoration: none;
+              font-weight: 700;
+              text-align: center;
+              overflow: hidden;
+              margin: 0;
+              color: #fff;
+              padding: 0 3rem;
+              border-radius: 0.25rem;
+              background-color: #ffba43;
+              display: inline-block;
+              position: relative;
+              z-index: 1;
+              transition: color 0.3s;
+              box-sizing: border-box;
+              border: none;
+            }
+
+            #contact-1388 .cs-button-solid:before {
+              content: "";
+              position: absolute;
+              height: 100%;
+              width: 0%;
+              background: #000;
+              opacity: 1;
+              top: 0;
+              left: 0;
+              z-index: -1;
+              border-radius: 0.25rem;
+              transition: width 0.3s;
+            }
+
+            #contact-1388 .cs-button-solid:hover:before {
+              width: 100%;
+            }
+
+            /* Mobile - 360px */
+            @media only screen and (min-width: 0rem) {
+              .hero {
+                flex-direction: column;
+                height: auto;
+                background-image: none;
+                padding: 0rem 1rem 1rem 1rem;
+              }
+
+              .bg-image {
+                width: 110%;
+                height: 500px;
+                background-image: url("/src/img/hero_bg.jpeg");
+                background-size: cover;
+                background-position: center;
+              }
+
+              .title-container {
+                position: absolute;
+                text-align: left;
+                margin-bottom: 600px;
+                margin-right: 0;
+              }
+
+              .hero-tagline {
+                font-size: clamp(1rem, 2vw, 1.5rem);
+                color: white;
+                margin: 0;
+              }
+
+              .hero-title {
+                font-size: clamp(2.6rem, 5vw, 3rem);
+                font-weight: bold;
+                font-style: italic;
+                color: white;
+                margin: 0;
+              }
+
+              .form-container {
+                width: 100%;
+                max-width: 400px;
+                border-radius: 0;
+                padding: 1rem;
+                margin-top: 15px;
+                border-radius: 25px;
+              }
+
+              .cs-header-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .social-media-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-media-icons a img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        transition: transform 0.3s;
+      }
+
+      .social-media-icons a img:hover {
+        transform: scale(1.1);
+      }
+
+            /* Tablet - 720px */
+            @media only screen and (min-width: 48rem) {
+              .hero {
+                flex-direction: row;
+                padding: 2rem;
+                background-image: url("/src/img/hero_bg.jpeg");
+                background-size: cover;
+                background-position: center;
+              }
+
+              .bg-image {
+                display: none;
+              }
+
+              .title-container {
+                position: absolute;
+                text-align: left;
+                margin-right: 350px;
+                margin-bottom: 0px;
+              }
+
+              .hero-tagline {
+                font-size: clamp(1rem, 2vw, 1.5rem);
+                color: white;
+                margin: 0;
+              }
+
+              .hero-title {
+                font-size: clamp(3rem, 5vw, 3rem);
+                font-weight: bold;
+                font-style: italic;
+                color: white;
+                margin: 0;
+              }
+
+              .form-container {
+                max-width: 330px;
+                padding: 0;
+                border-radius: 10px;
+                margin-top: 350px;
+              }
+
+              #contact-1388 .cs-form {
+                width: 100%;
+                padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 3rem);
+                box-sizing: border-box;
+                background-color: #fff;
+                border-radius: 1rem 1rem 0rem 0rem;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 0.75rem;
+              }
+            }
+
+            /* Desktop - 1280px */
+            @media only screen and (min-width: 64rem) {
+              .hero {
+                min-height: 100vh;
+                padding: 3rem;
+              }
+
+              .form-container {
+                max-width: 400px;
+                padding: 0;
+                margin-top: 400px;
+              }
+
+              .title-container {
+                position: absolute;
+                text-align: left;
+                margin-right: 450px;
+              }
+
+              .hero-tagline {
+                font-size: clamp(1.5rem, 2vw, 1.5rem);
+                color: white;
+                padding-right: -350px;
+              }
+
+              .hero-title {
+                font-size: clamp(5rem, 5vw, 3rem);
+                font-weight: bold;
+                font-style: italic;
+                color: white;
+                margin-left: -0px;
+              }
+
+              button {
+                padding: 1rem;
+                font-size: 1.1rem;
+              }
+              #contact-1388 .cs-form {
+                width: 100%;
+
+                padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 3rem);
+                box-sizing: border-box;
+                background-color: #fff;
+                font-size: clamp(1.25rem, 3vw, 1.4375rem);
+                border-radius: 1rem 1rem 0rem 0rem;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 0.75rem;
+              }
+              .cs-h3[data-astro-cid-s3cksqxz] {
+                font-size: clamp(1.25rem, 3vw, 1.4375rem);
+                line-height: 1.2em;
+                font-weight: 700;
+                margin: 0;
+                color: var(--headerColor);
+              }
+            }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="title-container">
+        <h1 class="hero-title">Shubh Sandharbh</h1>
+        <p class="hero-tagline">Your Vision our Innovation</p>
+      </div>
+      <div class="bg-image"></div>
+
+      <div class="form-container">
+        <section id="contact-1388">
+          <div class="cs-container">
+            <div class="cs-content">
+              <span class="cs-topper"></span>
+            </div>
+            <!----form---->
+            <form
+              class="cs-form"
+              id="cs-form-1388"
+              name="Contact Form"
+              action="https://formspree.io/f/mdknbrrv"
+              method="post"
+            >
+              <h3 class="cs-h3">
+                <div class="cs-header-container">
+                  Contact Us
+                  <div class="social-media-icons">
+                    <a href="#"
+                      ><img src="/src/svg/facebook.svg" alt="Facebook"
+                    /></a>
+                    <a href="#"
+                      ><img src="/src/svg/instagram.svg" alt="Instagram"
+                    /></a>
+                    <a href="#"
+                      ><img src="/src/svg/whatsapp.svg" alt="whatsapp"
+                    /></a>
+                  </div>
+                </div>
+              </h3>
+
+              <label class="cs-label">
+                Name*
+                <input
+                  class="cs-input"
+                  required
+                  type="text"
+                  id="name-1388"
+                  name="name"
+                  placeholder="Name"
+                />
+              </label>
+              <label class="cs-label cs-phone">
+                Phone*
+                <input
+                  class="cs-input"
+                  required
+                  type="tel"
+                  id="phone-1388"
+                  name="phone"
+                  pattern="^\+?[0-9]{10,15}$"
+                  title="Phone number should contain 10 to 15 digits."
+                  placeholder="Phone"
+                />
+              </label>
+              <div class="cs-label cs-wedding-type">
+                Select Wedding Type
+                <div class="cs-radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="weddingType"
+                      value="South Indian Wedding"
+                      required
+                    />South Indian Wedding
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="weddingType"
+                      value="North Indian Wedding"
+                      required
+                    />North Indian Wedding
+                  </label>
+                </div>
+              </div>
+              <label class="cs-label cs-date">
+                Select Date*
+                <input
+                  class="cs-input"
+                  required
+                  type="date"
+                  id="date-1388"
+                  name="date"
+                />
+              </label>
+              <button class="cs-button-solid cs-submit" type="submit">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      flatpickr("#date-1388", {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+      });
+
+      document
+        .getElementById("cs-form-1388")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Form submitted successfully!");
+
+          this.submit();
+        });
+    </script>
+  </body>
+</html>

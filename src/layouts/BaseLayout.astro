@@ -1,0 +1,32 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Hero from "../layouts/Hero.astro";
+import Services from "../components/Services.astro";
+import Gallery from "../components/Gallery.astro";
+import Reviews from "../components/Reviews.astro";
+import Cta from "../components/Cta.astro";
+import Footer from "../layouts/Footer.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="about" href="/src/pages/about.astro" />
+    <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
+    <link rel="Contact Us" href="/src/pages/contactus.astro" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="{Astro.generator}" />
+    <title>Astro</title>
+  </head>
+
+  <body>
+    <Navbar />
+    <Hero />
+    <Services />
+    <Gallery />
+    <Reviews />
+    <Cta />
+    <Footer />
+  </body>
+</html>

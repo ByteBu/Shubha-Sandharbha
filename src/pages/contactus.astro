@@ -1,0 +1,37 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Banner from "../components/Banner.astro";
+import Form from "../components/Form.astro";
+import Footer from "../layouts/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: "Lora", serif !important;
+        margin: 0;
+        padding: 0;
+      }
+
+      .lora-font {
+        font-family: "Lora", serif !important;
+      }
+    </style>
+
+    <Navbar />
+    <Banner title="Contact Us" />
+    <Form />
+    <Footer />
+  </body>
+</html>

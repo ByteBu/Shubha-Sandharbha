@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.svg" type="image/x-icon" />
+    <style>
+      :root {
+        --primary: #ff6a3e;
+        --primaryLight: #ffba43;
+        --secondary: #ffba43;
+        --secondaryLight: #ffba43;
+        --headerColor: #1a1a1a;
+        --bodyTextColor: #4e4b66;
+        --bodyTextColorWhite: #fafbfc;
+        --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+        --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+        --bodyFontSize: 1rem;
+        --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Lora", serif;
+        background-color: #f2ece5;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+
+      .cs-topper {
+        font-size: var(--topperFontSize);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+        display: block;
+        font-family: "Lora", serif;
+      }
+
+      .cs-title {
+        font-size: var(--headerFontSize);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        max-width: 43.75rem;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        position: relative;
+        font-family: "Lora", serif;
+      }
+
+      .cs-text {
+        font-size: var(--bodyFontSize);
+        line-height: 1.5em;
+        text-align: inherit;
+        width: 100%;
+        max-width: 40.625rem;
+        margin: 0;
+        color: var(--bodyTextColor);
+        font-family: "Lora", serif;
+      }
+
+      .cs-h3 {
+        font-family: "Lora", serif;
+      }
+
+      .cs-item-text {
+        font-family: "Lora", serif;
+      }
+
+      .cs-button-solid {
+        font-size: 1rem;
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        font-weight: 700;
+        min-width: 9.375rem;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0 1.5rem;
+        color: #fff;
+        background-color: var(--primary);
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        font-family: "Lora", serif;
+      }
+
+      @media only screen and (min-width: 0rem) {
+        #services-1188 {
+          padding: var(--sectionPadding);
+        }
+        #services-1188 .cs-container {
+          max-width: 80rem;
+          width: 100%;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: clamp(3rem, 6vw, 4rem);
+          background-color: #f2ece5;
+        }
+        #services-1188 .cs-content {
+          width: 75%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: justify;
+        }
+
+        #services-1188 .cs-card-group {
+          max-width: 56.25rem;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          display: grid;
+          justify-content: center;
+          gap: 1rem;
+        }
+        #services-1188 .cs-item {
+          list-style: none;
+          max-width: 23rem;
+          width: 100%;
+          margin: 0;
+          box-sizing: border-box;
+          padding: 1rem;
+          border: 2px solid #dbba92;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: left;
+        }
+        #services-1188 .cs-picture {
+          width: 100%;
+          height: auto;
+          margin-bottom: 1.25rem;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          flex: none;
+        }
+        #services-1188 .cs-picture img {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 50%;
+        }
+        #services-1188 .cs-h3 {
+          font-size: 1.25rem;
+          line-height: 1.5em;
+          margin: 0;
+          margin-bottom: 0.5rem;
+          color: var(--headerColor);
+          text-align: center;
+        }
+        #services-1188 .cs-item-text {
+          font-size: clamp(0.875rem, 1.5vw, 1rem);
+          line-height: 1.5em;
+          margin: 0;
+          color: var(--bodyTextColor);
+          text-align: center;
+        }
+        .cs-button-solid {
+          font-family: "Lora", serif;
+          font-size: 1rem;
+          line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+          text-decoration: none;
+          font-weight: 700;
+          text-align: center;
+          margin: 0;
+          color: var(--bodyTextColorWhite);
+          min-width: 9.375rem;
+          padding: 0 1.5rem;
+          background-color: var(--secondary);
+          border-radius: 0.25rem;
+          display: inline-block;
+          position: relative;
+          z-index: 1;
+          box-sizing: border-box;
+          border: none;
+        }
+
+        .cs-button-solid:before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 0%;
+          background: black;
+          opacity: 1;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          border-radius: 0.25rem;
+          transition: width 0.3s;
+        }
+
+        .cs-button-solid:hover:before {
+          width: 100%;
+        }
+      }
+
+      @media only screen and (min-width: 48rem) {
+        #services-1188 .cs-card-group {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.25rem;
+        }
+        #services-1188 .cs-item {
+          margin: 0;
+        }
+      }
+
+      @media only screen and (min-width: 81.25rem) {
+        #services-1188 .cs-card-group {
+          max-width: 80rem;
+        }
+        #services-1188 .cs-item {
+          max-width: none;
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="services-1188">
+      <div class="cs-container">
+        <div class="cs-content">
+          <span class="cs-topper"></span>
+          <h2 class="cs-title"><i>Our Services</i></h2>
+          <p class="cs-text">
+            <section id="what-we-do">
+              <h2>What We Do</h2>
+              <p>We offer a comprehensive suite of wedding planning services tailored to meet the unique needs of each couple:</p>
+            
+              <h3>1. North Indian Wedding Events</h3>
+              <p><strong><i>Vibrant Celebrations</i>:</strong> Specializing in traditional North Indian weddings, we incorporate elements like intricate Mandap decorations, vibrant floral arrangements, and elaborate Baraat processions to ensure an authentic experience.</p>
+              <p><strong><i>Cultural Nuances</i>:</strong> We pay special attention to cultural customs, whether it's a traditional Hindu wedding with Vedic rituals, a Sikh wedding with Anand Karaj, or any other regional variation.</p>
+            
+              <h3>2. South Indian Wedding Events</h3>
+              <p><strong><i>Rich Traditions</i>:</strong> Our expertise extends to South Indian weddings, where we celebrate the rich traditions of ceremonies like Kashi Yatra, Oonjal, and Talambralu. Our team ensures every detail, from the temple-themed decor to the traditional Nadaswaram music, is perfectly in place.</p>
+              <p><strong><i>Custom Tailored Services</i>:</strong> We customize every aspect of the event, from the choice of authentic South Indian cuisine to traditional attire arrangements, ensuring the event reflects your unique cultural heritage.</p>
+            
+              <h3>3. Pre-Wedding Celebrations</h3>
+              <p><strong><i>Mehndi and Sangeet</i>:</strong> These joyous pre-wedding events are a celebration of love, dance, and music. We provide end-to-end services, including themed décor, live entertainment, and choreographed performances, creating a memorable start to your wedding festivities.</p>
+              <p><strong><i>Haldi and Engagement</i>:</strong> We also offer complete planning and coordination for other pre-wedding rituals like Haldi and engagement ceremonies, ensuring a seamless and stress-free experience for you and your family.</p>
+            
+              <h3>4. Reception & Varmala </h3>
+              <p><strong><i>Exquisite Celebrations</i>:</strong> The wedding reception is the grand finale of your wedding journey. We specialize in creating stunning reception setups that leave a lasting impression on your guests. From luxurious décor to world-class catering and entertainment, we manage every detail to perfection.</p>
+              <p><strong><i>Personalized Themes</i>:</strong> Whether you desire a classic, contemporary, or culturally themed reception, we tailor every aspect to match your style and vision, creating a unique and unforgettable experience.</p>
+            </section>
+            
+          </p>
+        </div>
+        <ul class="cs-card-group">
+          <li class="cs-item">
+            <picture class="cs-picture">
+              <img src="" alt="Decorations" />
+            </picture>
+            <div class="cs-text-group">
+              <h3 class="cs-h3">Decorations</h3>
+              <p class="cs-item-text">
+                Transform your event space with our custom decoration services,
+                creating visually stunning environments.
+              </p>
+            </div>
+          </li>
+          <li class="cs-item">
+            <picture class="cs-picture">
+              <img src="" alt="Video and Photo Shoot" />
+            </picture>
+            <div class="cs-text-group">
+              <h3 class="cs-h3">Photography & videography</h3>
+              <p class="cs-item-text">
+                Capture every memorable moment with our professional video and
+                photo shoot services.
+              </p>
+            </div>
+          </li>
+          <li class="cs-item">
+            <picture class="cs-picture">
+              <img src="" alt="Catering" />
+            </picture>
+            <div class="cs-text-group">
+              <h3 class="cs-h3">Catering</h3>
+              <p class="cs-item-text">
+                Delight your guests with our diverse and exquisite catering
+                options, to suit all tastes and dietary preferences.
+              </p>
+            </div>
+          </li>
+          <li class="cs-item">
+            <picture class="cs-picture">
+              <img src="" alt="Venue Booking" />
+            </picture>
+            <div class="cs-text-group">
+              <h3 class="cs-h3">Venue Booking</h3>
+              <p class="cs-item-text">
+                Find the perfect setting for your event with our venue booking
+                service.
+              </p>
+            </div>
+          </li>
+          <li class="cs-item">
+            <picture class="cs-picture">
+              <img src="" alt="Lighting and Sound System" />
+            </picture>
+            <div class="cs-text-group">
+              <h3 class="cs-h3">Lighting & Sound System</h3>
+              <p class="cs-item-text">
+                Enhance your event's atmosphere with our lighting systems, for
+                an immersive experience.
+              </p>
+            </div>
+          </li>
+          <li class="cs-item">
+            <picture class="cs-picture">
+              <img src="" alt="Service" />
+            </picture>
+            <div class="cs-text-group">
+              <h3 class="cs-h3">MUA</h3>
+              <p class="cs-item-text">Elevate your look with our professional make-up services, ensuring you look flawless and feel confident on your special day.</p>
+            </div>
+          </li>
+        </ul>
+        <a href="" class="cs-button-solid">Book Appointment</a>
+      </div>
+    </section>
+  </body>
+</html>

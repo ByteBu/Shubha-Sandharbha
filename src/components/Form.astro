@@ -1,0 +1,543 @@
+---
+import Navbar from "../components/Navbar.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="cs-contact-490">
+      <div class="cs-container">
+        <div class="cs-content">
+          <span class="cs-topper"></span>
+          <h2 class="cs-title"><i>Contact Us</i></h2>
+          <p class="cs-text">
+            Have questions or need assistance? Contact us using the form below
+            or give us a call. We’re here to help and can’t wait to hear from
+            you!
+          </p>
+
+          <span class="cs-header">Address</span>
+          <a href="" class="cs-link"> Sanjaynagar, <br />Bengaluru-560094 </a>
+          <span class="cs-header">Email</span>
+          <a href="mailto:business@shubhsandharb.in" class="cs-link"
+            >business@shubhsandharb.in</a
+          >
+          <span class="cs-header">Phone</span>
+          <a href="tel:9606255549" class="cs-link">91+9606255549</a>
+
+          <div class="cs-social">
+            <a
+              class="cs-social-link"
+              aria-label="visit google profile"
+              href="https://www.facebook.com/share/bntEZ9SxVXobTbHY/?mibextid=LQQJ4d"
+            >
+              <img
+                class="cs-social-img"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="/src/svg/facebook-white.svg"
+                alt="facebook logo"
+                width="11"
+                height="11"
+              />
+            </a>
+            <a
+              class="cs-social-link"
+              aria-label="visit facebook profile"
+              href="https://www.instagram.com/shubha_sandharbh/"
+            >
+              <img
+                class="cs-social-img"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="/src/svg/instagram-white.svg"
+                alt="instagram logo"
+                width="6"
+                height="11"
+              />
+            </a>
+            <a
+              class="cs-social-link"
+              aria-label="visit instagram profile"
+              href="https://wa.me/919606255549"
+            >
+              <img
+                class="cs-social-img"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="/src/svg/whatsapp-white.svg"
+                alt="whatsapp logo"
+                width="11"
+                height="11"
+              />
+            </a>
+          </div>
+        </div>
+
+        <form
+          id="cs-form-490"
+          action="https://formspree.io/f/mdknbrrv"
+          method="post"
+          onsubmit="return validateForm(event)"
+        >
+          <label class="cs-label">
+            Name
+            <input
+              class="cs-input"
+              required
+              type="text"
+              id="name-490"
+              name="name"
+              minlength="3"
+              maxlength="50"
+              pattern="[a-zA-Z\s]+"
+              title="Name should only contain letters and spaces."
+              placeholder="Enter your name"
+            />
+            <span class="error-message" id="name-error"></span>
+          </label>
+          <label class="cs-label">
+            Email
+            <input
+              class="cs-input"
+              required
+              type="email"
+              id="email-490"
+              name="email"
+              placeholder="Enter your email"
+            />
+            <span class="error-message" id="email-error"></span>
+          </label>
+          <label class="cs-label">
+            Phone
+            <input
+              class="cs-input"
+              required
+              type="tel"
+              id="phone-490"
+              name="phone"
+              pattern="^\+?[0-9]{10,15}$"
+              title="Phone number should contain 10 to 15 digits."
+              placeholder="Enter your phone number"
+            />
+            <span class="error-message" id="phone-error"></span>
+          </label>
+          <div class="cs-label cs-wedding-type">
+            Select Wedding Type
+            <div class="cs-radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="weddingType"
+                  value="South Indian Wedding"
+                  required
+                />South Indian Wedding
+              </label>
+              <br />
+              <label>
+                <input
+                  type="radio"
+                  name="weddingType"
+                  value="North Indian Wedding"
+                  required
+                />North Indian Wedding
+              </label>
+            </div>
+          </div>
+
+          <label class="cs-label cs-date">
+            Select Date
+            <input
+              class="cs-input"
+              required
+              type="date"
+              id="date-1388"
+              name="date"
+            />
+          </label>
+          <label class="cs-label cs-label-message">
+            Message
+            <textarea
+              class="cs-input"
+              required
+              name="message"
+              id="message-490"
+              minlength="10"
+              maxlength="300"
+              placeholder="Hello, I’m interested in..."
+            ></textarea>
+            <span class="error-message" id="message-error"></span>
+          </label>
+          <button class="cs-button-solid" type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      function validateForm(event) {
+        let isValid = true;
+
+        const nameInput = document.getElementById("name-490");
+        const nameError = document.getElementById("name-error");
+        if (!nameInput.value.match(/^[a-zA-Z\s]+$/)) {
+          nameError.textContent = "Please enter a valid name.";
+          isValid = false;
+        } else {
+          nameError.textContent = "";
+        }
+
+        const emailInput = document.getElementById("email-490");
+        const emailError = document.getElementById("email-error");
+        if (!emailInput.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+          emailError.textContent = "Please enter a valid email address.";
+          isValid = false;
+        } else {
+          emailError.textContent = "";
+        }
+
+        const phoneInput = document.getElementById("phone-490");
+        const phoneError = document.getElementById("phone-error");
+        if (!phoneInput.value.match(/^\+?[0-9]{10,15}$/)) {
+          phoneError.textContent = "Please enter a valid phone number.";
+          isValid = false;
+        } else {
+          phoneError.textContent = "";
+        }
+
+        const messageInput = document.getElementById("message-490");
+        const messageError = document.getElementById("message-error");
+        if (messageInput.value.length < 10) {
+          messageError.textContent =
+            "Message should be at least 10 characters.";
+          isValid = false;
+        } else {
+          messageError.textContent = "";
+        }
+
+        if (!isValid) {
+          event.preventDefault();
+        }
+
+        return isValid;
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  /* Global font classes */
+  .lora-normal {
+    font-family: "Lora", serif !important;
+    font-weight: 400;
+  }
+
+  .lora-bold {
+    font-family: "Lora", serif !important;
+    font-weight: 700;
+  }
+
+  .lora-heavy {
+    font-family: "Lora", serif;
+    font-weight: 900;
+  }
+
+  /*-- -------------------------- -->
+  <---          Contact           -->
+  <--- -------------------------- -*/
+
+  :root {
+    --primary: #ff6a3e;
+    --primaryLight: #ffba43;
+    --secondary: #ffba43;
+    --secondaryLight: #ffba43;
+    --headerColor: #1a1a1a;
+    --bodyTextColor: #4e4b66;
+    --bodyTextColorWhite: #fafbfc;
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --bodyFontSize: 1rem;
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  .cs-topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    display: block;
+    font-family: "Lora", serif; /* Apply Lora font */
+  }
+
+  .cs-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
+    font-family: "Lora", serif; /* Apply Lora font */
+  }
+
+  .cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+    font-family: "Lora", serif; /* Apply Lora font */
+  }
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0rem) {
+    #cs-contact-490 {
+      padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+      background-color: #f7ebdb;
+    }
+    #cs-contact-490 .cs-container {
+      width: 100%;
+      max-width: 34.375rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+    #cs-contact-490 .cs-content {
+      max-width: 32.625rem;
+      text-align: left;
+    }
+    #cs-contact-490 .cs-text {
+      margin: 0 0 clamp(1rem, 4.4vw, 3rem) 0;
+    }
+    #cs-contact-490 .cs-header {
+      font-size: clamp(0.8125rem, 1.5vw, 1rem);
+      line-height: 1.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin: 0 0 1rem 0;
+      color: #b4b2c7;
+      display: block;
+      font-family: "Lora", serif; /* Apply Lora font */
+    }
+    #cs-contact-490 .cs-link {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      text-decoration: none;
+      line-height: 1.5em;
+      font-weight: 700;
+      margin: 0 0 clamp(1rem, 2.5vw, 2rem);
+      color: var(--headerColor);
+      display: block;
+      font-family: "Lora", serif; /* Apply Lora font */
+    }
+    #cs-contact-490 .cs-link:hover {
+      text-decoration: underline;
+    }
+    #cs-contact-490 .cs-link:last-of-type {
+      margin-bottom: 0;
+    }
+    #cs-contact-490 .cs-social {
+      margin-top: clamp(2rem, 6vw, 5rem);
+      display: inline-flex;
+      justify-content: flex-start;
+      gap: 0.75em;
+    }
+    #cs-contact-490 .cs-social-link {
+      width: clamp(2rem, 4vw, 3.25rem);
+      height: clamp(2rem, 4vw, 3.25rem);
+      background-color: #4e4b66;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    #cs-contact-490 .cs-social-link:hover {
+      transform: translateY(-0.1875rem);
+    }
+    #cs-contact-490 .cs-social-img {
+      height: clamp(0.875rem, 2vw, 1.5rem);
+      width: auto;
+      display: block;
+    }
+    #cs-contact-490 #cs-form-490 {
+      width: 100%;
+      max-width: 40.625rem;
+      margin-bottom: clamp(2rem, 5.3vw, 2.5rem);
+      padding: clamp(1.25rem, 4.5vw, 2.5rem);
+      box-sizing: border-box;
+      border: 1px solid #dad9e3;
+      border-radius: 1rem;
+    }
+    #cs-contact-490 .cs-label {
+      font-size: clamp(0.875rem, 1.3vw, 1rem);
+      line-height: 1.5em;
+      font-weight: 700;
+      margin-bottom: clamp(1rem, 1em, 1.25rem);
+      color: var(--headerColor);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      font-family: "Lora", serif; /* Apply Lora font */
+    }
+    #cs-contact-490 .cs-label-message {
+      margin-bottom: clamp(2rem, 4.5vw, 2.5rem);
+    }
+    #cs-contact-490 .cs-input,
+    #cs-contact-490 textarea {
+      font-size: 1rem;
+      width: 100%;
+      height: 4rem;
+      margin-top: 0.25rem;
+      padding-left: 1.25rem;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      border: 1px solid #b4b2c7;
+      background-color: #fcf5ec;
+      box-sizing: border-box;
+      transition: border 0.3s;
+      font-family: "Lora", serif; /* Apply Lora font */
+    }
+    #cs-contact-490 .cs-input:hover,
+    #cs-contact-490 textarea:hover {
+      border: 1px solid #f3ece4;
+    }
+    #cs-contact-490 .cs-input::placeholder,
+    #cs-contact-490 textarea::placeholder {
+      color: #7d799c;
+    }
+    #contact-1388 .cs-wedding-type {
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+
+    #contact-1388 .cs-radio-group {
+      display: block;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    #contact-1388 .cs-radio-group label {
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      display: flex;
+      margin-top: 5px;
+      color: var(--headerColor);
+      margin-top: 0.3rem;
+    }
+
+    #contact-1388 .cs-date {
+      width: 100%;
+      margin: 0rem 0;
+    }
+
+    #contact-1388 .cs-input[type="date"] {
+      font-size: 1rem;
+      width: 100%;
+      height: 3.5rem;
+      padding: 0;
+      padding-left: 1.5rem;
+      color: var(--headerColor);
+      background-color: #f7f7f7;
+      border-radius: 0.5rem;
+      border: none;
+      box-sizing: border-box;
+    }
+    #cs-contact-490 textarea {
+      font-family: inherit;
+      margin: 0;
+      padding-top: 1.25rem;
+      min-height: 7.5rem;
+    }
+    #cs-contact-490 .cs-button-solid {
+      font-size: 1rem;
+      line-height: clamp(2.875em, 5.5vw, 3.5em);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      margin: auto;
+      width: 100%;
+      color: white;
+      padding: 0 1.5rem;
+      background-color: #ffba43;
+      border: none;
+      border-radius: 0.5rem;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      box-sizing: border-box;
+      font-family: "Lora", serif;
+    }
+    #cs-contact-490 .cs-button-solid:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      background: black;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 0.5rem;
+      transition: width 0.3s;
+    }
+    #cs-contact-490 .cs-button-solid:hover {
+      cursor: pointer;
+    }
+    #cs-contact-490 .cs-button-solid:hover:before {
+      width: 100%;
+    }
+  }
+  /* Tablet - 700px */
+  @media only screen and (min-width: 43.75rem) {
+    #cs-contact-490 .cs-container {
+      max-width: 80rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    #cs-contact-490 .cs-content {
+      width: 40%;
+      order: 2;
+      flex: none;
+    }
+    #cs-contact-490 #cs-form-490 {
+      margin: 0;
+    }
+  }
+</style>
